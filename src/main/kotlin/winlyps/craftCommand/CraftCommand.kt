@@ -5,7 +5,8 @@ import org.bukkit.plugin.java.JavaPlugin
 class CraftCommand : JavaPlugin() {
 
     override fun onEnable() {
-        // Plugin startup logic
+        // Register the command executor
+        getCommand("craft")?.setExecutor(CraftCommandExecutor(this))
     }
 
     override fun onDisable() {
